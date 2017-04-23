@@ -49,14 +49,11 @@ def parseDT ts
 end
 
 
-g = GoogleNews.new
 
-
-
-get '/google_news.json' do
+get '/' do
+  g = GoogleNews.new
   {
     :timestamp => DateTime.now,
-    :params => '123',
     :data => g.news
   }.to_json
 end
